@@ -3,3 +3,4 @@
 .coverage
 tests/__pycache__
 src/bio_statistics.egg-info
+src/bio_statistics/__pycache__
