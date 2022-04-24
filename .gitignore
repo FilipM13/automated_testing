@@ -1,3 +1,5 @@
 .idea
 .tox
 .coverage
+tests/__pycache__
+src/bio_statistics.egg-info
