@@ -7,7 +7,8 @@ To make this project both useful for learning and useful as a tool I decided to 
 This will be set of functions that cover subjects of Statistics In Biomedicine.
 I'll try to add simple explanation to each function in doc-string.
 
-Package is intallable with comment `pip install git+https://github.com/FilipM13/automated_testing.git`
+Package is installable with command: <br>
+`pip install git+https://github.com/FilipM13/automated_testing.git`
 
 Current jobs status:
 
