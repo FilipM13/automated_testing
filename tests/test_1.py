@@ -2,6 +2,7 @@ import pytest
 import bio_statistics.utils
 
 
+# test basic behaviour of function with regular cases and edge cases
 @pytest.mark.parametrize("test_input, expected", [
     (
         [float(x) for x in [0, 5, 6, 7, 8, -7, -1, 2, 1, 1]],
