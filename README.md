@@ -28,4 +28,40 @@ Current jobs status:
 
 ## Statistics In Biomedicine
 
+### Calculating ranks
+Steps:
+* order elements of list by their absolute value
+* group elements with the same absolute value
+* for each element assign rank which is equal to average index value of all elements in group
+
+Example:
+given series = [0, 5, 6, 7, 8, -7, -1, 2, 1, 1] <br>
+<b> result of step1 </b>: [0, -1, 1, 1, 2, 5, 6, -7, 7, 8] <br>
+<b> result of step2 </b>: <br>
+<small> note: indices corresponding to following values are 1, 2, 3 ... n </small> <br>
+[ <br>
+[0], <br>
+[-1, 1, 1], <br>
+[2], <br>
+[5], <br>
+[6], <br>
+[-7, 7], <br>
+[8] <br>
+] <br>
+<b> result of step3 </b>: <br>
+<small> [value, rank] </small> <br>
+[ <br>
+[0, 1], <br>
+[-1, 3], <br>
+[1, 3], <br>
+[1, 3], <br>
+[2, 5], <br>
+[5, 6], <br>
+[6, 7], <br>
+[-7, 8.5], <br>
+[7, 8.5], <br>
+[8, 10] <br>
+]
+
+
 
