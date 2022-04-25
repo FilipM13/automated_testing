@@ -19,16 +19,22 @@ Current jobs status:
 ![Tests](https://github.com/FilipM13/automated_testing/actions/workflows/tests.yml/badge.svg)
 
 
+## Table of contents
+1. [Automated Testing](#AT)
+2. [Statistics In Biomedicine](#SIBM)
+    1. [Calculating ranks](#ranks)
+
+
 <hr style="border:3px solid gray">
 
-## Automated Testing
+## Automated Testing <a name="AT"></a>
 
 
 <hr style="border:3px solid gray">
 
-## Statistics In Biomedicine
+## Statistics In Biomedicine <a name="SIBM"></a>
 
-### Calculating ranks
+### Calculating ranks <a name="ranks"></a>
 #### Steps:
 * order elements of list by their absolute value
 * group elements with the same absolute value
