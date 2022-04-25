@@ -34,7 +34,7 @@ Steps:
 * group elements with the same absolute value
 * for each element assign rank which is equal to average index value of all elements in group
 
-Example:
+Example: <br>
 given series = [0, 5, 6, 7, 8, -7, -1, 2, 1, 1] <br>
 <b> result of step1 </b>: [0, -1, 1, 1, 2, 5, 6, -7, 7, 8] <br>
 <b> result of step2 </b>: <br>
