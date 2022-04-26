@@ -5,3 +5,4 @@ tests/__pycache__
 src/bio_statistics.egg-info
 src/bio_statistics/__pycache__
 instrukcje
+tests/test_CheckVarianceNormality/__pycache__
