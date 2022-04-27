@@ -48,7 +48,7 @@ class CheckVarianceNormality:
         compare = [0 for _ in range(len(normalized_series))]  # type: ignore
         T = [abs(ns - c) for ns, c in zip(normalized_series, compare)]
         T = min(T)  # type: ignore[arg-type]
-        rv = T < critical_value  # type: ignore[operator]
+        rv = bool(T < critical_value)  # type: ignore[operator]
         return rv
 
     @classmethod
