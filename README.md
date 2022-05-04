@@ -24,7 +24,7 @@ Current jobs status:
 1. [Automated Testing](#AT)
 2. [Statistics In Biomedicine](#SIBM)
     1. [Calculating ranks](#ranks)
-2. [Statistics In Biomedicine](#MCG)
+2. [Monte Carlo Generator](#MCG)
 
 
 <hr style="border:3px solid gray">
