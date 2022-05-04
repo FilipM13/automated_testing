@@ -1,8 +1,11 @@
 .idea
 .tox
 .coverage
-tests/__pycache__
+instrukcje
+
 src/bio_statistics.egg-info
 src/bio_statistics/__pycache__
-instrukcje
-tests/test_CheckVarianceNormality/__pycache__
+
+tests/test_bio_statistics/test_CheckVarianceNormality/__pycache__
+tests/__pycache__
+tests/test_bio_statistics/__pycache__

@@ -4,9 +4,10 @@ In this repository I learn how to configure automated tests with tox, github act
 This file will contain notes regarding creating configuration files, tests etc.
 
 ## Background (Statistics In Biomedicine)
-To make this project both useful for learning and useful as a tool I decided to make it a package.
+To make this project both useful for learning and useful as a tool I decided to make it a package. <br>
 This will be set of functions that cover subjects of Statistics In Biomedicine.
-I'll try to add simple explanation to each function in doc-string.
+I'll try to add simple explanation to each function in doc-string. <br>
+Another package included will be simple generator as a part of my thesis.
 
 <hr style="border:3px solid gray">
 
@@ -23,6 +24,7 @@ Current jobs status:
 1. [Automated Testing](#AT)
 2. [Statistics In Biomedicine](#SIBM)
     1. [Calculating ranks](#ranks)
+2. [Statistics In Biomedicine](#MCG)
 
 
 <hr style="border:3px solid gray">
@@ -71,3 +73,7 @@ given series = [0, 5, 6, 7, 8, -7, -1, 2, 1, 1] <br>
 
 
 
+
+<hr style="border:3px solid gray">
+
+## Monte Carlo Generator <a name="MCG"></a>
