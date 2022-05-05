@@ -16,18 +16,23 @@ def get_ranks(series: list[float]) -> list[list[float]]:
     :param series: List of numeric values values
     :return: List of pair of values where first element in pair is element from given input and second element is it's rank
     """
-    sorted_series = sorted(series, key=lambda x: abs(x))
-    absolute_sorted_series = [abs(v) for v in sorted_series]
-    values = set(absolute_sorted_series)
-    values_count = [absolute_sorted_series.count(v) for v in values]
-    values_range = [range(sum(values_count[:i])+1, sum(values_count[:i+1])+1) for i in range(len(values_count))]
-    ranks = [[statistics.mean(_l) for _ in _l] for _l in values_range]
+
+    # input data validation
+    assert all([isinstance(v, (float, int)) for v in series]), 'All values must be numeric (int or float).'
+
+    # steps
+    sorted_series = sorted(series, key=lambda x: abs(x))  # sort series by absolute value
+    absolute_sorted_series = [abs(v) for v in sorted_series]  # get absolut values of sorted values
+    values = set(absolute_sorted_series)  # get unique values
+    values_count = [absolute_sorted_series.count(v) for v in values]  # count unique values
+    values_range = [range(sum(values_count[:i])+1, sum(values_count[:i+1])+1) for i in range(len(values_count))]  # associate unique values with ranges of indices # noqa: E501
+    ranks = [[statistics.mean(_l) for _ in _l] for _l in values_range]  # associate sorted_series values with mean indices values
     _tmp = []
-    for r in ranks:
+    for r in ranks:  # unpacking lists to create 1d array
         r = [float(_r) for _r in r]
         _tmp.extend(r)
 
-    ranks = [[s, t] for s, t in zip(sorted_series, _tmp)]
+    ranks = [[s, t] for s, t in zip(sorted_series, _tmp)]  # create list of pairs (value, rank)
 
     return ranks
 
@@ -73,6 +78,7 @@ def Wilcoxon(series1: list[float], series2: list[float], critical_value: float =
     assert all([isinstance(v, (float, int)) for v in series2]), 'All values must be numeric (int or float).'
     assert isinstance(critical_value, (float, int)), 'Critical value must be numeric (int or float).'
 
+    # test steps
     differance = [r[0]-r[1] for r in zip(series1, series2)]  # calculate differance between series
     differance = list(filter(lambda r: r != 0, differance))  # remove 0 values
     differance_ranks = get_ranks(differance)  # get ranks
