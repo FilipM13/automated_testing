@@ -23,7 +23,9 @@ Current jobs status:
 ## Table of contents
 1. [Automated Testing](#AT)
 2. [Statistics In Biomedicine](#SIBM)
-    1. [Calculating ranks](#ranks)
+    * [Calculating ranks](#ranks)
+    * [Wilcoxon test](#wilcoxon)
+    * [U Mann Whitney test](#umw)
 2. [Monte Carlo Generator](#MCG)
 
 
@@ -71,7 +73,9 @@ given series = [0, 5, 6, 7, 8, -7, -1, 2, 1, 1] <br>
 [8, 10] <br>
 ]
 
+### Wilcoxon test <a name="wilcoxon"></a>
 
+### U Mann Whitney test <a name="umw"></a>
 
 
 <hr style="border:3px solid gray">
