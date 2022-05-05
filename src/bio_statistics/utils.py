@@ -1,8 +1,6 @@
 import statistics
 
 # TODO: function: tStudent
-# TODO: function: UMannWhitney
-# TODO: function: Wilcoxon
 # TODO: class: CheckVarianceNormality, methods: fix Lilliefors, ShapiroWilk, KolmogorovSmirnov
 # TODO: function: KruskallWallis
 # TODO: function: Friedman
@@ -123,7 +121,7 @@ def Wilcoxon(series1: list[float], series2: list[float], critical_value: float =
         m = n * (n + 1) / 4  # calculate micro
         s = ((2 * n + 1) * m / 6) ** 0.5  # calculate sigma
         w = (w - m) / s  # calculate new statistic
-    rv = bool(w < critical_value)  # compare sum with given critical value
+    rv = w < critical_value  # compare sum with given critical value
     return rv  # return test result
 
 
