@@ -53,8 +53,51 @@ class CheckVarianceNormality:
 
 
 # TODO: adding paired samples and independent samples version of t student
-def tStudent():
-    pass
+def tStudent(series1: list[float], series2: list[float], critical_value: float, independent_samples: bool = True) -> bool:
+    """
+    Reject H0 hypothesis if return value is True.
+    :param series1:
+    :param series2:
+    :param critical_value:
+    :param independent_samples:
+    :return:
+    """
+
+    # input validation
+    assert all([isinstance(v, (float, int)) for v in series1]), 'All values must be numeric (int or float).'
+    assert all([isinstance(v, (float, int)) for v in series2]), 'All values must be numeric (int or float).'
+    assert isinstance(critical_value, (float, int)), 'Critical value must be numeric (int or float).'
+    assert isinstance(independent_samples, bool), 'independent_samples must be boolean.'
+
+    # calcualting basic constans
+    v1 = statistics.variance(series1)  # variance
+    v2 = statistics.variance(series2)
+    m1 = statistics.mean(series1)  # mean
+    m2 = statistics.mean(series2)
+    n1 = len(series1)  # number of samples
+    n2 = len(series2)
+
+    # test steps for equal variance and independent samples
+    if v1 == v2 and independent_samples:
+        _top = m1 - m2
+
+        _bottom_top = v1 ** 2 * (n1 - 1) + v2 ** 2 * (n2 - 1)
+        _bottom_btm = n1 + n2 - 2
+        _bottom_multiplier = 1 / n1 + 1 / n2
+
+        _bottom = (_bottom_top / _bottom_btm * _bottom_multiplier) ** 0.5
+
+        t = _top / _bottom
+
+    # test steps for unequal varianc and indepandent samples
+    if v1 != v2 and independent_samples:
+        _top = m1 - m2
+        _bottom = (v1 ** 2 / n1 + v2 ** 2 / n2) ** 0.5
+
+        t = _top / _bottom
+
+    rv = t < critical_value
+    return rv  # type: ignore[no-any-return]
 
 
 def UMannWhitney(series1: list[float], series2: list[float], critical_value: float) -> bool:
