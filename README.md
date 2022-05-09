@@ -75,6 +75,31 @@ given series = [0, 5, 6, 7, 8, -7, -1, 2, 1, 1] <br>
 ]
 
 ### Wilcoxon test <a name="wilcoxon"></a>
+#### Steps:
+* calculate difference between series' samples
+* remove zero values from difference series
+* calculate ranks of difference series
+* sum positive and negative ranks
+* calculate W statistic 
+* compare W with critical value
+* if W < critical value than reject H0 hypothesis 
+
+#### Calculating W statistics:
+<b>Equation for series with no more than 25 samples: </b> </br>
+W = min(Rneg, Rpos)</br>
+
+
+<b>Equation for series with more than 25 samples: </b></br>
+W = ( min(Rneg, Rpos) - m ) / s </br>
+
+m = n * (n + 1) / 4 </br>
+
+s = ( (2 * n + 1) * m / 6 )^0.5 </br>
+
+<b>where:</b></br>
+Rneg, Rpos - sum of negative and positive ranks respectively </br>
+n - number of samples in series </br>
+
 
 ### U Mann Whitney test <a name="umw"></a>
 
