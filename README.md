@@ -88,7 +88,6 @@ given series = [0, 5, 6, 7, 8, -7, -1, 2, 1, 1] <br>
 <b>Equation for series with no more than 25 samples: </b> </br>
 W = min(Rneg, Rpos)</br>
 
-
 <b>Equation for series with more than 25 samples: </b></br>
 W = ( min(Rneg, Rpos) - m ) / s </br>
 
@@ -102,6 +101,27 @@ n - number of samples in series </br>
 
 
 ### U Mann Whitney test <a name="umw"></a>
+#### Steps:
+* calculate ranks separately for both series
+* calculate sum of ranks separately for both series
+* calculate U statistic 
+* compare U with critical value
+* if U < critical value than reject H0 hypothesis 
+
+#### Calculating W statistics:
+<b>Equation for series with no more than 20 samples: </b> </br>
+U1 = n1 * n2 + (n1 * (n1+1)) / 2 - R1 </br>
+U2 = n1 * n2 + (n2 * (n2+1)) / 2 - R2 </br>
+U = min(U1, U2) </br>
+
+<b>Equation for series with more than 20 samples: </b></br>
+U = (R1 - R2 - (n1 - n2) * (n + 1) / 2) / (n1 * n2 * (n + 1))^0.5 </br>
+
+n = n1 + n2 </br>
+
+<b>where:</b></br>
+R1, R2 - sum of series 1 ranks and series 2 ranks respectively </br>
+n1, n2 - number of samples in series 1 and series 2 respectively </br>
 
 ### T Student test <a name="tstudent"></a>
 
