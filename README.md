@@ -26,6 +26,7 @@ Current jobs status:
     * [Calculating ranks](#ranks)
     * [Wilcoxon test](#wilcoxon)
     * [U Mann Whitney test](#umw)
+    * [T Student test](#tstudent)
 2. [Monte Carlo Generator](#MCG)
 
 
@@ -76,6 +77,8 @@ given series = [0, 5, 6, 7, 8, -7, -1, 2, 1, 1] <br>
 ### Wilcoxon test <a name="wilcoxon"></a>
 
 ### U Mann Whitney test <a name="umw"></a>
+
+### T Student test <a name="tstudent"></a>
 
 
 <hr style="border:3px solid gray">
