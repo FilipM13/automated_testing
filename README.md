@@ -32,14 +32,14 @@ Current jobs status:
 
 <hr style="border:3px solid gray">
 
-## Automated Testing <a name="AT"></a>
+## <center> Automated Testing <a name="AT"></a> </center>
 
 
 <hr style="border:3px solid gray">
 
-## Statistics In Biomedicine <a name="SIBM"></a>
+## <center> Statistics In Biomedicine <a name="SIBM"></a> </center>
 
-### Calculating ranks <a name="ranks"></a>
+### <center> Calculating ranks <a name="ranks"></a> </center>
 #### Steps:
 * order elements of list by their absolute value
 * group elements with the same absolute value
@@ -74,7 +74,7 @@ given series = [0, 5, 6, 7, 8, -7, -1, 2, 1, 1] <br>
 [8, 10] <br>
 ]
 
-### Wilcoxon test <a name="wilcoxon"></a>
+### <center> Wilcoxon test <a name="wilcoxon"></a> </center>
 #### Steps:
 * calculate difference between series' samples
 * remove zero values from difference series
@@ -100,7 +100,7 @@ Rneg, Rpos - sum of negative and positive ranks respectively </br>
 n - number of samples in series </br>
 
 
-### U Mann Whitney test <a name="umw"></a>
+### <center> U Mann Whitney test <a name="umw"></a> </center>
 #### Steps:
 * calculate ranks separately for both series
 * calculate sum of ranks separately for both series
@@ -123,7 +123,7 @@ n = n1 + n2 </br>
 R1, R2 - sum of series 1 ranks and series 2 ranks respectively </br>
 n1, n2 - number of samples in series 1 and series 2 respectively </br>
 
-### T Student test <a name="tstudent"></a>
+### <center> T Student test <a name="tstudent"></a> </center>
 Reject H0 hypothesis if statistic t is smaller than critical value. </br>
 Calculate t statistic according to data samples:
 
@@ -147,4 +147,4 @@ t = A / (B1 + B2)^0.5 </br>
 
 <hr style="border:3px solid gray">
 
-## Monte Carlo Generator <a name="MCG"></a>
+## <center> Monte Carlo Generator <a name="MCG"></a> </center>
