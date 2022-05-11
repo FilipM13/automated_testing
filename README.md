@@ -44,6 +44,7 @@ Current jobs status:
 <h2 align="center"> Statistics In Biomedicine </h2> <a name="SIBM"></a>
 
 <h3 align="center"> Calculating ranks </h3> <a name="ranks"></a>
+
 #### Steps:
 * order elements of list by their absolute value
 * group elements with the same absolute value
@@ -79,6 +80,7 @@ given series = [0, 5, 6, 7, 8, -7, -1, 2, 1, 1] <br>
 ]
 
 <h3 align="center"> Wilcoxon test </h3> <a name="wilcoxon"></a>
+
 #### Steps:
 * calculate difference between series' samples
 * remove zero values from difference series
@@ -105,6 +107,7 @@ n - number of samples in series </br>
 
 
 <h3 align="center"> U Mann Whitney test </h3> <a name="umw"></a>
+
 #### Steps:
 * calculate ranks separately for both series
 * calculate sum of ranks separately for both series
@@ -128,6 +131,7 @@ R1, R2 - sum of series 1 ranks and series 2 ranks respectively </br>
 n1, n2 - number of samples in series 1 and series 2 respectively </br>
 
 <h3 align="center"> T Student test </h3> <a name="tstudent"></a>
+
 Reject H0 hypothesis if statistic t is smaller than critical value. </br>
 Calculate t statistic according to data samples:
 
