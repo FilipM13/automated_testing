@@ -124,7 +124,26 @@ R1, R2 - sum of series 1 ranks and series 2 ranks respectively </br>
 n1, n2 - number of samples in series 1 and series 2 respectively </br>
 
 ### T Student test <a name="tstudent"></a>
+Reject H0 hypothesis if statistic t is smaller than critical value. </br>
+Calculate t statistic according to data samples:
 
+#### For equal variance and independent samples:
+A = m1 - m2 </br>
+B1 = v1^2 * (n1 - 1) + v2^2 * (n2 - 1) </br>
+B2 = n1 + n2 - 2 </br>
+B3 = 1 / n1 + 1 / n2 </br>
+t = A / ( B1 / B2 * B3)^0.5 </br>
+
+#### For unequal variance and independent samples:
+A = m1 - m2 </br>
+B1 = v1^2 / n1 </br>
+B2 = v2^2 / n2 </br>
+t = A / (B1 + B2)^0.5 </br>
+
+<b>Where </b> </br>
+ v1, v2 - variance of series 1 and 2 respectfully </br>
+ m1, m2 - mean of series 1 and 2 respectfully </br>
+ n1, n2 - number of samples inf series 1 and 2 respectfully </br>
 
 <hr style="border:3px solid gray">
 
