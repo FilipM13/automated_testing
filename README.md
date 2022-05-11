@@ -141,9 +141,9 @@ B2 = v2^2 / n2 </br>
 t = A / (B1 + B2)^0.5 </br>
 
 <b>Where </b> </br>
- v1, v2 - variance of series 1 and 2 respectfully </br>
- m1, m2 - mean of series 1 and 2 respectfully </br>
- n1, n2 - number of samples inf series 1 and 2 respectfully </br>
+ v1, v2 - variance of series 1 and 2 respectively </br>
+ m1, m2 - mean of series 1 and 2 respectively </br>
+ n1, n2 - number of samples inf series 1 and 2 respectively </br>
 
 <hr style="border:3px solid gray">
 
