@@ -23,23 +23,23 @@ Current jobs status:
 ## Table of contents
 1. [Automated Testing](#AT)
 2. [Statistics In Biomedicine](#SIBM)
-    * [Calculating ranks](#ranks)
-    * [Wilcoxon test](#wilcoxon)
-    * [U Mann Whitney test](#umw)
-    * [T Student test](#tstudent)
+  * [Calculating ranks](#ranks)
+  * [Wilcoxon test](#wilcoxon)
+  * [U Mann Whitney test](#umw)
+  * [T Student test](#tstudent)
 2. [Monte Carlo Generator](#MCG)
 
 
 <hr style="border:3px solid gray">
 
-## <center> Automated Testing <a name="AT"></a> </center>
+## Automated Testing <a name="AT"></a>
 
 
 <hr style="border:3px solid gray">
 
-## <center> Statistics In Biomedicine <a name="SIBM"></a> </center>
+## Statistics In Biomedicine <a name="SIBM"></a>
 
-### <center> Calculating ranks <a name="ranks"></a> </center>
+### Calculating ranks <a name="ranks"></a>
 #### Steps:
 * order elements of list by their absolute value
 * group elements with the same absolute value
@@ -74,7 +74,7 @@ given series = [0, 5, 6, 7, 8, -7, -1, 2, 1, 1] <br>
 [8, 10] <br>
 ]
 
-### <center> Wilcoxon test <a name="wilcoxon"></a> </center>
+### Wilcoxon test <a name="wilcoxon"></a>
 #### Steps:
 * calculate difference between series' samples
 * remove zero values from difference series
@@ -100,7 +100,7 @@ Rneg, Rpos - sum of negative and positive ranks respectively </br>
 n - number of samples in series </br>
 
 
-### <center> U Mann Whitney test <a name="umw"></a> </center>
+### U Mann Whitney test <a name="umw"></a>
 #### Steps:
 * calculate ranks separately for both series
 * calculate sum of ranks separately for both series
@@ -123,7 +123,7 @@ n = n1 + n2 </br>
 R1, R2 - sum of series 1 ranks and series 2 ranks respectively </br>
 n1, n2 - number of samples in series 1 and series 2 respectively </br>
 
-### <center> T Student test <a name="tstudent"></a> </center>
+### T Student test <a name="tstudent"></a>
 Reject H0 hypothesis if statistic t is smaller than critical value. </br>
 Calculate t statistic according to data samples:
 
@@ -147,4 +147,4 @@ t = A / (B1 + B2)^0.5 </br>
 
 <hr style="border:3px solid gray">
 
-## <center> Monte Carlo Generator <a name="MCG"></a> </center>
+<h2 align="center"> Monte Carlo Generator </h2> <a name="MCG"></a>
