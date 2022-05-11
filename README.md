@@ -32,14 +32,14 @@ Current jobs status:
 
 <hr style="border:3px solid gray">
 
-## Automated Testing <a name="AT"></a>
+## Automated Testing </h2> <a name="AT"></a>
 
 
 <hr style="border:3px solid gray">
 
-## Statistics In Biomedicine <a name="SIBM"></a>
+<h2 align="center"> Statistics In Biomedicine </h2> <a name="SIBM"></a>
 
-### Calculating ranks <a name="ranks"></a>
+<h3 align="center"> Calculating ranks </h3> <a name="ranks"></a>
 #### Steps:
 * order elements of list by their absolute value
 * group elements with the same absolute value
@@ -74,7 +74,7 @@ given series = [0, 5, 6, 7, 8, -7, -1, 2, 1, 1] <br>
 [8, 10] <br>
 ]
 
-### Wilcoxon test <a name="wilcoxon"></a>
+<h3 align="center"> Wilcoxon test </h3> <a name="wilcoxon"></a>
 #### Steps:
 * calculate difference between series' samples
 * remove zero values from difference series
@@ -100,7 +100,7 @@ Rneg, Rpos - sum of negative and positive ranks respectively </br>
 n - number of samples in series </br>
 
 
-### U Mann Whitney test <a name="umw"></a>
+<h3 align="center"> U Mann Whitney test </h3> <a name="umw"></a>
 #### Steps:
 * calculate ranks separately for both series
 * calculate sum of ranks separately for both series
@@ -123,7 +123,7 @@ n = n1 + n2 </br>
 R1, R2 - sum of series 1 ranks and series 2 ranks respectively </br>
 n1, n2 - number of samples in series 1 and series 2 respectively </br>
 
-### T Student test <a name="tstudent"></a>
+<h3 align="center"> T Student test </h3> <a name="tstudent"></a>
 Reject H0 hypothesis if statistic t is smaller than critical value. </br>
 Calculate t statistic according to data samples:
 
