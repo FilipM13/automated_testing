@@ -67,7 +67,9 @@ def tStudent(series1: list[float], series2: list[float], critical_value: float, 
     assert all([isinstance(v, (float, int)) for v in series1]), 'All values must be numeric (int or float).'
     assert all([isinstance(v, (float, int)) for v in series2]), 'All values must be numeric (int or float).'
     assert isinstance(critical_value, (float, int)), 'Critical value must be numeric (int or float).'
-    assert isinstance(independent_samples, bool), 'independent_samples must be boolean.'
+    assert isinstance(independent_samples, bool), 'Independent_samples must be boolean.'
+    if not independent_samples:
+        assert len(series1) == len(series2), 'For dependent samples series size must be the same.'
 
     # calcualting basic constans
     v1 = statistics.variance(series1)  # variance
@@ -95,6 +97,14 @@ def tStudent(series1: list[float], series2: list[float], critical_value: float, 
         _bottom = (v1 ** 2 / n1 + v2 ** 2 / n2) ** 0.5
 
         t = _top / _bottom
+
+    # test steps for dependent samples
+    if not independent_samples:
+        series_dif = [abs(s[0] - s[1]) for s in zip(series1, series2)]
+        m = statistics.mean(series_dif)  # mean
+        n = len(series_dif)  # number of samples
+        std = statistics.stdev(series_dif)  # standard deviation
+        t = m * n ** 0.5 / std
 
     rv = t < critical_value
     return rv  # type: ignore[no-any-return]
