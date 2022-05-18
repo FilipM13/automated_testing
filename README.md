@@ -4,7 +4,7 @@
 In this repository I learn how to configure automated tests with tox, github actions and pytest.
 This file will contain notes regarding creating configuration files, tests etc.
 
-<h2 align="center"> Background (Statistics In Biomedicine) </h2>
+<h2 align="center"> Background </h2>
 
 To make this project both useful for learning and useful as a tool I decided to make it a package. <br>
 This will be set of functions that cover subjects of Statistics In Biomedicine.
@@ -148,7 +148,7 @@ B1 = v1^2 / n1 </br>
 B2 = v2^2 / n2 </br>
 t = A / (B1 + B2)^0.5 </br>
 
-<b>Where </b> </br>
+<b>Where: </b> </br>
  v1, v2 - variance of series 1 and 2 respectively </br>
  m1, m2 - mean of series 1 and 2 respectively </br>
  n1, n2 - number of samples inf series 1 and 2 respectively </br>
