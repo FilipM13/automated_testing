@@ -1,11 +1,26 @@
 import statistics
 
 # TODO: function: tStudent
-# TODO: class: CheckVarianceNormality, methods: fix Lilliefors, ShapiroWilk, KolmogorovSmirnov
-# TODO: function: KruskallWallis
 # TODO: function: Friedman
+# TODO: class: CheckVarianceNormality, methods: Lilliefors, ShapiroWilk, KolmogorovSmirnov
+# TODO: function: KruskallWallis
 # TODO: function: Anova
 # TODO: function: Anova_multivariate
+
+
+def _lower_dict_sum(series: dict[float, int], k: float) -> int:
+    """
+    IMPORTANT: hack for get_ranks function, it serves no utility on its's own.
+    Return sum of values corresponding to keys smaller than k.
+    :param series: dictionary of key (float or int) and value (int)
+    :param k: value for comparing keys
+    :return: sum of chosen values
+    """
+    s = 0
+    for key, value in series.items():
+        if key < k:
+            s += value
+    return s
 
 
 def get_ranks(series: list[float]) -> list[list[float]]:
@@ -22,17 +37,16 @@ def get_ranks(series: list[float]) -> list[list[float]]:
     sorted_series = sorted(series, key=lambda x: abs(x))  # sort series by absolute value
     absolute_sorted_series = [abs(v) for v in sorted_series]  # get absolut values of sorted values
     values = set(absolute_sorted_series)  # get unique values
-    values_count = [absolute_sorted_series.count(v) for v in values]  # count unique values
-    values_range = [range(sum(values_count[:i])+1, sum(values_count[:i+1])+1) for i in range(len(values_count))]  # associate unique values with ranges of indices # noqa: E501
-    ranks = [[statistics.mean(_l) for _ in _l] for _l in values_range]  # associate sorted_series values with mean indices values
-    _tmp = []
-    for r in ranks:  # unpacking lists to create 1d array
-        r = [float(_r) for _r in r]
-        _tmp.extend(r)
+    values_count = {v: absolute_sorted_series.count(v) for v in values}  # count unique values
+    values_range = {v: range(_lower_dict_sum(values_count, v) + 1, _lower_dict_sum(values_count, v) + values_count[v] + 1) for v in values}  # associate unique values with index ranges # noqa: E501
+    rank_assignments = {v: statistics.mean(values_range[v]) for v in values}  # associate unique values with mean of coresponding indices
 
-    ranks = [[s, t] for s, t in zip(sorted_series, _tmp)]  # create list of pairs (value, rank)
+    # create list of [value, rank] in order of original series
+    ranks = []
+    for s in series:
+        ranks.append([s, rank_assignments[abs(s)]])
 
-    return ranks  # return test result
+    return ranks
 
 
 class CheckVarianceNormality:
