@@ -2,6 +2,7 @@
 .tox
 .coverage
 instrukcje
+tablice
 
 src/bio_statistics.egg-info
 src/bio_statistics/__pycache__
