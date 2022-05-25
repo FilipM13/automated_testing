@@ -249,3 +249,69 @@ def Anova():
 
 def Anova_multivariate():
     pass
+
+
+def pearson_corelation(series1: list[float], series2: list[float]) -> float:
+    """
+    Calculates corelation value using Pearson method.
+    :param series1: first series of values
+    :param series2: second  series of values
+    :return: corelation value
+    """
+
+    # input data validation
+    assert len(series1) == len(series2), 'Series must be same length.'
+    assert all([isinstance(v, (float, int)) for v in series1]), 'All values must be numeric (int or float).'
+    assert all([isinstance(v, (float, int)) for v in series2]), 'All values must be numeric (int or float).'
+
+    # calculating corelation
+    m1 = statistics.mean(series1)
+    m2 = statistics.mean(series2)
+    difs1 = [abs(m1 - s) for s in series1]
+    difs2 = [abs(m2 - s) for s in series2]
+    mult = [d[0] * d[1] for d in zip(difs1, difs2)]
+    A = float(sum(mult))
+
+    square_difs1 = [d**2 for d in difs1]
+    square_difs2 = [d**2 for d in difs2]
+    B1 = float(sum(square_difs1)**0.5)
+    B2 = float(sum(square_difs2)**0.5)
+
+    rp = A / (B1 * B2)
+
+    return rp
+
+
+def spearman_corelation(series1: list[float], series2: list[float]) -> float:
+    """
+    Calculates corelation value using Spearman method.
+    :param series1: first series of values
+    :param series2: second  series of values
+    :return: corelation value
+    """
+
+    # input data validation
+    assert len(series1) == len(series2), 'Series must be same length.'
+    assert all([isinstance(v, (float, int)) for v in series1]), 'All values must be numeric (int or float).'
+    assert all([isinstance(v, (float, int)) for v in series2]), 'All values must be numeric (int or float).'
+
+    # calculating corelation
+    s1r = [r[1] for r in get_ranks(series1)]
+    s2r = [r[1] for r in get_ranks(series2)]
+    difs_r = [s[0] - s[1] for s in zip(s1r, s2r)]
+    difs_r = [d ** 2 for d in difs_r]
+    sdifsr = sum(difs_r)
+
+    n = len(series1)
+
+    repetition_count1 = [s1r.count(r) for r in set(s1r)]
+    repetition_count1 = [r ** 3 - r for r in repetition_count1]
+    t1 = sum(repetition_count1) / 12
+
+    repetition_count2 = [s2r.count(r) for r in set(s2r)]
+    repetition_count2 = [r ** 3 - r for r in repetition_count2]
+    t2 = sum(repetition_count2) / 12
+
+    rs = 1 - (6 * sdifsr + t1 + t2) / (n * (n * 2 - 1))
+
+    return rs
